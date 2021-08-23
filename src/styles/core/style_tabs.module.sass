@@ -1,0 +1,483 @@
+/* tab activation */
+
+.tab__activation
+  .tab__activation_description
+    font-size: 15px
+    line-height: 26px
+    text-align: center
+    color: #000000
+  .tab__activation__block
+    border: 1px dashed #454444
+    box-sizing: border-box
+    border-radius: 2px
+    margin-top: 15px
+  .tab__activation__block_title
+    background: #F1F8FF
+    border-radius: 2px
+    height: 42px
+    display: flex
+    align-items: center
+    justify-content: center
+  .tab__activation__block_form
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    width: 82%
+    margin: auto auto 20px
+  .tab__activation__block_phone
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    align-items: center
+    margin-top: 18px
+    margin-bottom: 8px
+  .tab__activation__block_phone input[name="makeroi-phone__activation"]
+    border: 1px solid #DBDEDF
+    box-sizing: border-box
+    border-radius: 3px
+    height: 36px
+    width: 365px
+  .tab__activation__block_politics
+    display: flex
+    flex-direction: row
+    font-size: 12px
+    align-items: center
+  .tab__activation__block_politics > a
+    padding: 0 4px
+    text-decoration-line: underline
+    color: #969696
+  .tab__activation__validation_error
+    background-color: #FFEBE4
+    font-size: 14px
+    padding: 10px
+    text-align: center
+    margin-top: 10px
+
+.tab__activation__block_phone
+  \:global(.country-list)
+    z-index: 5
+
+.hidden
+  display: none
+
+/* feedback block */
+
+.feedback__block
+  display: flex
+  border-radius: 3px
+  box-shadow: 0 2px 6px 0 #0000001a
+  padding: 12px
+  margin-top: 20px
+  align-items: center
+  justify-content: space-between
+  .feedback__block_text
+    font-size: 14px
+.feedback__block > .feedback_button
+  background: #F1F8FF
+  border-color: #A8BFD3
+  text-transform: uppercase
+  font-size: 12px
+  font-family: PT Sans
+  font-style: normal
+  font-weight: normal
+
+.partner__block
+  display: flex
+  margin-top: 15px
+  .partner__block_info
+    text-align: center
+    width: 100%
+    border-radius: 3px
+    box-shadow: 0 2px 6px 0 #0000001a
+    padding: 12px
+    margin-right: 20px
+    line-height: 23px
+    font-size: 14px
+  .partner__block_info > a
+    color: inherit
+  .partner__block_contact
+    display: flex
+    flex-direction: column
+    width: 60%
+    padding: 5px 15px
+    background: #F1F8FF
+    border-radius: 2px
+    border: 1px dashed #313942
+    box-sizing: border-box
+    justify-content: space-between
+  .partner__block_contact > .partner__block_contact_title
+    text-align: center
+  .partner__block_contact > .partner__block_contact_text
+    padding: 4px 0
+    white-space: nowrap
+    display: flex
+  .partner__block_contact_text > img
+    width: 18px
+    margin-top: 2px
+  .partner__block_contact_text > span
+    margin-left: 4px
+  .partner__block_contact_text > span > a
+    color: inherit
+.partner_subscription_block
+  display: flex
+  margin-top: 15px
+  .partner__block_contact
+    display: flex
+    flex-direction: column
+    width: 60%
+    padding: 5px 15px
+    background: #F1F8FF
+    border-radius: 2px
+    border: 1px dashed #313942
+    box-sizing: border-box
+    justify-content: space-between
+  .partner__block_info
+    text-align: center
+    width: 100%
+    border-radius: 3px
+    box-shadow: 0 2px 6px 0 #0000001a
+    padding: 12px
+    margin-left: 20px
+    line-height: 23px
+    font-size: 14px
+  .partner__block_info > a
+    color: inherit
+  .partner__block_contact > .partner__block_contact_title
+    text-align: center
+  .partner__block_contact > .partner__block_contact_text
+    padding: 4px 0
+    white-space: nowrap
+    display: flex
+  .partner__block_contact_text > img
+    width: 18px
+    margin-top: 2px
+  .partner__block_contact_text > span
+    margin-left: 4px
+  .partner__block_contact_text > span > a
+    color: inherit
+
+/* feedback modal */
+
+.feedback__modal > div > div
+  min-width: 35%
+  width: 555px
+.feedback__modal_content
+  .feedback__head
+    display: flex
+    .feedback__head_logo__text
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      padding-left: 10px
+      font-size: 16px
+  .feedback__body
+    padding: 20px 0
+    .feedback__tabs
+      display: inline-flex
+      width: auto
+      font-size: 15px
+      height: 29px
+      list-style: none
+      border-bottom: 1px solid #4c8bf7
+      -webkit-box-pack: justify
+      justify-content: space-between
+      -webkit-box-align: stretch
+      align-items: stretch
+      padding-top: 5px
+    .feedback__tabs > input
+      display: none
+    .feedback__tabs > input:checked+ label
+      border-bottom: 3px solid #4c8bf7
+      color: #2e3640
+    .feedback__tabs > label
+      padding: 2px 5px
+      cursor: pointer
+      color: #b5b8be
+      margin-right: 10px
+  .feedback__footer
+    text-align: right
+  div[data-tab="feedback_call"]
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-height: 250px
+  .form__control
+    margin: 8px auto
+    width: 60%
+  .form__control > input
+    border: 0.764591px solid #d4d4d4
+    box-sizing: border-box
+    border-radius: 2.29377px
+    height: 32px
+    width: 100%
+    padding: 6px
+  .tab__info
+    font-family: PT Sans
+    font-size: 16px
+    line-height: 125.18%
+    letter-spacing: -0.015em
+    color: #000000
+    padding: 15px 0 25px
+  .politics__processing__policy > a
+    font-size: 14.5272px
+    line-height: 125.18%
+    color: #B5B8BE
+  div[data-tab="bug_report"] > .form__control,
+  div[data-tab="wishes"] > .form__control
+    width: inherit
+    display: flex
+    position: relative
+  div[data-tab="bug_report"] > .form__control > input:not(:first-child),
+  div[data-tab="wishes"] > .form__control > input:not(:first-child)
+    margin-left: 5px
+  .form__control > .textarea__div,
+  .form__control > textarea
+    width: 100%
+    border: 0.764591px solid #d4d4d4
+    box-sizing: border-box
+    border-radius: 2.29377px
+    padding: 6px
+    min-height: 130px
+    display: flex
+    flex-direction: column
+    resize: none
+  .form__control > :global(.intl-tel-input)
+    width: 100%
+  .form__control > :global(.intl-tel-input) > input
+    border: 0.764591px solid #d4d4d4
+    box-sizing: border-box
+    border-radius: 2.29377px
+    height: 32px
+    width: 100%
+    padding: 6px
+    padding-left: 44px
+  .form__control .bug_report_files_block
+    display: flex
+    justify-content: space-between
+  .form__control .bug_report_files_block > label[for="bug_report_file"]
+    cursor: pointer
+    display: flex
+    align-items: flex-end
+  .form__control .bug_report_files_block > input[name="bug_report_file"]
+    position: absolute
+    width: 0
+    height: 0
+    visibility: hidden
+  div[data-tab="bug_report"] > .politics__processing__policy,
+  div[data-tab="wishes"] > .politics__processing__policy
+    text-align: right
+    margin-top: -4px
+  .form__control > .textarea__div > textarea
+    resize: none
+    width: 100%
+    height: 100%
+    min-height: 120px
+    padding-bottom: 15px
+  .bug_report_files_block .file_list
+    max-width: calc(100% - 32px)
+  .bug_report_files_block .file_list > ul
+    padding: 0
+  .bug_report_files_block .file_list > ul > li
+    display: flex
+    min-height: 20px
+    align-content: center
+  .bug_report_files_block .file_list > ul > li > img
+    padding-right: 4px
+  .bug_report_files_block .file_list > ul > li > .file_name
+    padding: 0
+    display: block
+    line-height: 22px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    font-size: 12px
+  .bug_report_files_block .file_list > ul > li > .file_remove
+    margin: 0 5px
+    cursor: pointer
+
+/* subscription tab */
+.subscription_wrap
+  .subscription__status_block
+    display: flex
+    background-color: #DEEEFE
+    align-content: center
+    justify-content: center
+    height: 40px
+    align-items: center
+    .demo_inner_text
+      font-size: 17px
+      line-height: 31px
+      color: #000000
+  .subscription__status_block
+  \:global(.trial_subscription_expired)
+    background-color: #FFE7DF
+  .subscription__status_block
+  \:global(.paid_subscription_expired)
+    background-color: #FFE7DF
+  .subscription__status_block
+  \:global(.trial_subscription)
+    background-color: #DEEEFE
+  .subscription_wrap__free
+    background-color: #DEEEFE
+    padding: 6px 15px
+  .subscription__info_block
+    padding: 15px 0
+    .open_feed_back
+      color: #4C8BF7
+      text-decoration: underline
+      cursor: pointer
+  .subscription__period__wrap
+    display: flex
+    border: 2px dashed #454444
+    box-sizing: border-box
+    border-radius: 2px
+    .period__wrap_block
+      width: 100%
+      margin: 10px 0 10px 5px
+      .period__wrap:after
+        position: absolute
+        content: ''
+        width: 100%
+        height: 5px
+        background: #f1f8ff
+        top: 50%
+        margin-top: -21px
+        left: -13px
+        z-index: 0
+      .period__wrap
+        font-size: 18px
+        height: 135px
+        position: relative
+        .period__rate__item
+          width: 92px
+          height: 135px
+          cursor: pointer
+          text-align: center
+          position: absolute
+          z-index: 1
+          left: 0
+          margin-left: -63px
+          margin-top: 0
+        .period__rate__item:before
+          position: absolute
+          content: ''
+          width: 22px
+          height: 22px
+          border-radius: 10px
+          background: #f1f8ff
+          top: 50%
+          left: 50%
+          margin-top: -30px
+          margin-left: -11px
+          z-index: -2
+        .period__rate_price
+          display: block
+          font-size: 15px
+          position: relative
+          top: 7px
+        .period__rate__item:global(.selected)
+          .period__rate_icon
+            display: block
+        .period__rate_icon
+          display: none
+          position: absolute
+          width: 32px
+          height: 32px
+          top: 50%
+          left: 50%
+          margin-left: -19px
+          margin-top: -35px
+        .period__rate_icon > img
+          width: 100%
+        .period__rate_prices
+          position: absolute
+          bottom: 14px
+          left: 0
+          right: 0
+        .period__rate_price
+          display: block
+          font-size: 15px
+          position: relative
+          top: 7px
+        .period__rate_desc
+          display: block
+          color: #4c8bf7
+          font-size: 14px
+          padding: 0 5px
+          line-height: 15px
+    div#rate_selector
+      outline: 2.5px solid #5490f7
+      z-index: 1
+      width: 92px
+      height: 134px
+      padding: 0
+      position: absolute
+      left: 0
+      top: 0
+      margin-left: -62px
+      margin-top: 1px
+      -webkit-transition: left .3s ease-out 0s
+      transition: left .3s ease-out 0s
+  .selected_period
+    width: 270px
+    background: #F1F8FF
+    border-radius: 2px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    .sum_inner_text
+      font-size: 16px
+      margin-top: 5px
+    .selected_duration
+      display: flex
+      height: 30px
+      align-items: center
+    .selected_sum
+      font-size: 24px
+      color: #4C8BF7
+      .selected_sum_price
+        padding: 0
+      .selected_sum_price_symbol
+        padding: 0
+    .subscription_politics
+      display: flex
+      text-align: center
+    .subscription_politics > a
+      color: #969696
+      font-size: 14px
+      display: flex
+      height: 40px
+      line-height: 15px
+      align-items: center
+    .pay_block_button
+      padding: 0
+    .pay_button_open
+      color: #fff
+.tab_widget_blocked
+  background: #FFE7DF
+  border: 1px dashed #2E3640
+  box-sizing: border-box
+  border-radius: 2px
+  padding: 22px
+
+.tab_widget_request_access
+  padding: 16px
+  background: #F1F8FF
+  border: 1px #454444 dotted
+  position: relative
+  margin-bottom: 10px
+
+.tab_widget_request__button
+  margin-bottom: 1px
+
+.padding_bottom
+  margin-bottom: 50px
+\:global(.widget-settings__desc-space)
+  @extend .padding_bottom
+\:global(.view-integration-modal__activation)
+  @extend .padding_bottom
+\:global(.view-integration-modal__tab-setting)
+  @extend .padding_bottom
+\:global(.view-integration-modal__subscription)
+  @extend .padding_bottom

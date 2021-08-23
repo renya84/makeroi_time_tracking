@@ -1,0 +1,88 @@
+<div class="{{ style.subscriptionWrap }}">
+
+    {% if status == "-99" %}
+        <div class="{{ style.subscriptionStatusBlock }} trial_subscription_expired">
+            <span class="{{ style.demoInnerText }}"> Демо-период виджета истек</span>
+        </div>
+    {% elseif status == "3"  %}
+        <div class="{{ style.subscriptionStatusBlock }} trial_subscription">
+            <span class="{{ style.demoInnerText }}"> Демо-период виджета до {{ expires }}</span>
+        </div>
+    {% elseif status == "5"  %}
+        <div class="{{ style.subscriptionStatusBlock }} trial_subscription">
+            <span class="{{ style.demoInnerText }}"> Оплаченный период до {{ expires }}</span>
+        </div>
+    {% elseif status == "-98"  %}
+        <div class="{{ style.subscriptionStatusBlock }} paid_subscription_expired">
+            <span class="{{ style.demoInnerText }}">Оплаченный период истек</span>
+        </div>
+    {% endif %}
+    {% if status != "2"  %}
+        <div class="{{ style.subscriptionInfoBlock }}">
+            Виджет предоставляется по платной подписке. Стоимость подписки зависит от выбранного тарифа.
+            Информация о тарифах и стоимости располагается в таблице ниже.
+            Для Физических лиц оплата производится через интернет-эквайринг.
+            Для Юридических лиц оплата производится по расчетному счету.
+            Для того чтобы сформировать расчетный счет, <span class="{{ style.openFeedBack }}">оставьте заявку</span> или <span class="{{ style.openFeedBack }}">свяжитесь с нами</span> любым удобным для Вас способом.
+        </div>
+        <div class="{{ style.subscriptionPeriodWrap }}">
+            {% set width = 96 %}
+            {% set styleWidth = width * (paySetting.length - 1) %}
+            {% set margin = '8px auto 0 auto' %}
+            {% if paySetting|length > 3 %}
+                {% set margin = '8px 46px 0 64px' %}
+            {% endif %}
+
+            <div class="{{ style.periodWrapBlock }}">
+                <div class="{{ style.periodWrap }}" style="width: {{ styleWidth }}px;margin: {{ margin }}">
+                    {% for item in paySetting %}
+                        <div class="{{ style.periodRateItem }} {% if selected == loop.index %} selected {% endif %}"
+                             data-value="{{ loop.index }}"
+                             data-price="{{ item.price }}"
+                                {% if loop.index == 1 %}
+                            style="left: 0px;"
+                        {% elseif loop.index == 1 %}
+                            style="left: {{ width }}px;"
+                        {% elseif loop.index > 1 %}
+                            {% set thisWidth = width * (loop.index - 1) %}
+                            style="left: {{ thisWidth }}px;"
+                                {% endif %}>
+
+                            <span class="{{ style.periodRatePrice }}">{{ item.name }}</span>
+                            <span class="{{ style.periodRateIcon }}">
+                                <img src="{{ folder }}/checked_period.svg">
+                            </span>
+                            <span class="{{ style.periodRatePrices }}">
+                                <span class="{{ style.periodRateDesc }}">{{ item.desc }}</span>
+                                <span class="{{ style.periodRatePrice }}">{{ item.price }} руб</span>
+                            </span>
+                        </div>
+                    {% endfor %}
+                    <div style="left: 0;" id="{{ style.rateSelector }}"></div>
+                </div>
+            </div>
+            <div class="{{ style.selectedPeriod }}">
+                <div class="{{ style.sumInnerText }}">Сумма:</div>
+                <div class="{{ style.selectedSum }}">
+                    <span class="{{ style.selectedSumPrice }}">9 990</span>
+                    <span class="{{ style.selectedSumPriceSymbol }}">₽</span>
+                </div>
+                <div class="{{ style.selectedDuration }}"></div>
+                <div class="{{ style.payBlockButton }}">
+                    {{ self.render({ ref: '/tmpl/controls/button.twig' }, {
+                        class_name: style.payButtonOpen,
+                        text: 'Оплатить',
+                        blue: true
+                    }) }}
+                </div>
+                <div class="{{ style.subscriptionPolitics }}">
+                    <a href="{{ confidence }}">пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="{{ style.subscriptionWrapFree }}">
+            Данный виджет предоставляется бесплатно
+        </div>
+    {% endif %}
+</div>

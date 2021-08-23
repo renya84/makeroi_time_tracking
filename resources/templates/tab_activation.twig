@@ -1,0 +1,34 @@
+<div class="{{ style.tabActivation }}">
+    <div class="{{ style.tabActivationDescription }}">Для того чтобы виджет начал функционировать, его необходимо активировать.</div>
+    <div class="{{ style.tabActivationBlock }}">
+        <div class="{{ style.tabActivationBlockTitle }}">
+            <span class="tab__activation__block_title_text">Номер телефона необходим для осуществления технической помощи</span>
+        </div>
+        <div class="{{ style.tabActivationBlockForm }}">
+            <div class="{{ style.tabActivationBlockPhone }}">
+                <div>
+                    <input type="text" name="makeroi-phone__activation">
+                </div>
+                <div>
+                    {{ self.render({ ref: '/tmpl/controls/button.twig' }, {
+                        class_name: 'makeroi-activation_button',
+                        text: 'Активировать',
+                        blue: true
+                    }) }}
+                </div>
+            </div>
+            <div class="{{ style.tabActivationBlockPolitics }}">
+                {{ self.render({ ref: '/tmpl/controls/checkbox.twig' }, {
+                    name: 'makeroi-politics',
+                    small: true
+                }) }}
+                Я ознакомлен с
+                <a href="{{ confidence }}" target="_blank" class="makeroi-tab__activation_user_agreement_link">Пользовательским соглашением</a>
+                и
+                <a href="{{ confidence }}" target="_blank" class="makeroi-tab__activation_politics_link">Политикой конфиденциальности</a>
+            </div>
+            <div class="{{ style.tabActivationValidationError }} {{ style.hidden }}">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="{{ style.versionWrap }}">
+    <div class="{{ style.versionInfo }}">
+        <div class="{{ style.versionInfoTitle }}">История версий</div>
+        <span class="{{ style.versionInfoInner }}">текущая версия {{ version }}</span>
+        <span class="{{ style.versionInfoDescription }}">{{ description }}</span>
+    </div>
+    <div class="{{ style.versionHistory }}">
+        {% set count = versions|length %}
+        {% for item in versions %}
+            {% if loop.index <= 3 %}
+                <div class="{{ style.versionItem }}">
+                    <div class="{{ style.versionItemInfo }}">
+                        <div class="{{ style.versionItemVersion }}">
+                            {{ item.name }}
+                        </div>
+                        <div class="{{ style.versionItemDate }}">
+                            {{ item.created_at }}
+                        </div>
+                    </div>
+                    <div class="{{ style.versionItemDescription }}">{{ item.description }}</div>
+                </div>
+            {% endif %}
+            {% if loop.index == 3 and count > 3 %}
+                <div class="{{ style.versionHistoryMore }} makeroi-version__history_show_more">
+                    <span class="makeroi-version__history__inner_text">еще</span>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="makeroi-version__history_more_item hidden">
+            {% for item in versions %}
+                {% if loop.index > 3 %}
+                    <div class="{{ style.versionItem }}">
+                        <div class="{{ style.versionItemInfo }}">
+                            <div class="{{ style.versionItemVersion }}">
+                                {{ item.name }}
+                            </div>
+                            <div class="{{ style.versionItemDate }}">
+                                {{ item.created_at }}
+                            </div>
+                        </div>
+                        <div class="{{ style.versionItemDescription }}">{{ item.description }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

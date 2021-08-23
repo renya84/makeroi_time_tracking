@@ -1,0 +1,50 @@
+<div class="{{ style.payHistoryContent }}">
+    <div class="{{ style.payHistoryTitle }}">История платежей</div>
+    <div class="{{ style.payHistoryTable }}">
+        <table>
+            <thead>
+                <tr>
+                    <td>№</td>
+                    <td>Основание платежа</td>
+                    <td>Дата</td>
+                    <td>Сумма</td>
+                    <td>Способ оплаты</td>
+                    <td>Документы</td>
+                    <td>Статус</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% if list|length > 0 %}
+                    {% for item in list %}
+                        {% set status = item.status.name ~ '<br>' ~ item.status.date|date('m/d/Y') %}
+                        {% set actLink = '' %}
+                        {% if item.links.act != null %}
+                            {% set actLink = '<a href="'~ item.links.act ~'">Акт</a>' %}
+                        {% endif %}
+                        {% set billLink = '' %}
+                        {% if item.links.bill != null %}
+                            {% set billLink = '<br><a href="'~ item.links.bill ~'">Счет</a>' %}
+                        {% endif %}
+                        {% set checkLink = '' %}
+                        {% if item.links.check != null %}
+                            {% set checkLink = '<br><a href="'~ item.links.check ~'">Чек</a>' %}
+                        {% endif %}
+
+                        {% set links = actLink ~ billLink ~ checkLink%}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.reason }}</td>
+                            <td>{{ item.date|date }}</td>
+                            <td style="white-space: nowrap;">{{ item.price }} ₽</td>
+                            <td>{{ item.type.name }}</td>
+                            <td>{{ links }}</td>
+                            <td>{{ status }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr><td colspan="7" class="{{ style.listEmpty }}">список платежей пуст</td></tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>

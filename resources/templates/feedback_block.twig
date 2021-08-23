@@ -1,0 +1,9 @@
+<div class="{{ style.feedbackBlock }}">
+    <div class="makeroi-feedback__block_text">
+        Есть вопросы? Мы готовы помочь удобным для Вас способом
+    </div>
+    {{ self.render({ ref: '/tmpl/controls/button.twig' }, {
+        class_name: style.feedbackButton,
+        text: 'Обратный звонок'
+    }) }}
+</div>

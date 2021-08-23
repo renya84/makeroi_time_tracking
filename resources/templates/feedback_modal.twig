@@ -1,0 +1,79 @@
+<div class="{{ style.feedbackModalContent }}">
+    <div class="{{ style.feedbackHead }}">
+        <img src="{{ folder }}/logo.svg">
+        <div class="{{ style.feedbackHeadLogoText }}">
+            <div>Внедрение amoCRM</div>
+            <div>и автоматизация бизнес-процессов</div>
+        </div>
+    </div>
+    <div class="{{ style.feedbackBody }}">
+        <div class="{{ style.feedbackTabs }}">
+            <input type="radio" name="makeroi-view_tab" id="feedback_call" checked>
+            <label for="feedback_call">Обратный звонок</label>
+            <input type="radio" name="makeroi-view_tab" id="bug_report">
+            <label for="bug_report">Баг-репорт</label>
+            <input type="radio" name="makeroi-view_tab" id="wishes">
+            <label for="wishes">Пожелания</label>
+        </div>
+        <div data-tab="feedback_call">
+            <div class="{{ style.tabInfo }}">
+                Остались вопросы? Закажите обратный звонок, наши специалисты свяжутся с Вами в ближайшее время.
+            </div>
+            <div class="{{ style.formControl }}">
+                <input type="text" name="makeroi-name_call" placeholder="Имя" autocomplete="off">
+            </div>
+            <div class="{{ style.formControl }}">
+                <input type="text" name="makeroi-phone_call" placeholder="Номер телефона" autocomplete="off">
+            </div>
+            <div class="{{ style.politicsProcessingPolicy }}">
+                <a href="{{ confidence }}" target="_blank">политика обработки персональных данных</a>
+            </div>
+        </div>
+        <div class="hidden" data-tab="bug_report">
+            <div class="{{ style.tabInfo }}">
+                Обнаружили ошибку в работе виджета? Опишите проблему, при необходимости загрузите скриншоты. Наши специалисты помогут решить её в ближайшее время.
+            </div>
+            <div class="{{ style.formControl }}">
+                <input type="text" name="makeroi-name_report" placeholder="Имя" autocomplete="off">
+                <input type="email" name="makeroi-email_report" placeholder="Е-mail" autocomplete="off">
+            </div>
+            <div class="{{ style.formControl }}">
+                <div class="{{ style.textareaDiv }}">
+                    <textarea name="makeroi-bug_report" placeholder="Опишите проблему" autocomplete="off"></textarea>
+                    <div class="{{ style.bugReportFilesBlock }}">
+                        <div class="{{ style.fileList }}">
+                            <ul></ul>
+                        </div>
+                        <label for="bug_report_file"><img src="{{ folder }}/clip.svg"></label>
+                        <input type="file" id="bug_report_file" name="bug_report_file" accept="image/jpeg,image/png,image/gif">
+                    </div>
+                </div>
+            </div>
+            <div class="{{ style.politicsProcessingPolicy }}">
+                <a href="{{ confidence }}" target="_blank">политика обработки персональных данных</a>
+            </div>
+        </div>
+        <div class="hidden" data-tab="wishes">
+            <div class="{{ style.tabInfo }}">
+                Есть пожелания к работе виджета? Вы можете описать их здесь. Мы обязательно рассмотрим Ваши пожелания и возможно реализуем в следующей версии продукта.
+            </div>
+            <div class="{{ style.formControl }}">
+                <input type="text" name="makeroi-name_wishes" placeholder="Имя" autocomplete="off">
+                <input type="email" name="makeroi-emai_wishes" placeholder="Е-mail" autocomplete="off">
+            </div>
+            <div class="{{ style.formControl }}">
+                <textarea name="makeroi-wishes" placeholder="Опишите проблему" autocomplete="off"></textarea>
+            </div>
+            <div class="{{ style.politicsProcessingPolicy }}">
+                <a href="{{ confidence }}" target="_blank">политика обработки персональных данных</a>
+            </div>
+        </div>
+    </div>
+    <div class="{{ style.feedbackFooter }}">
+        {{ self.render({ ref: '/tmpl/controls/button.twig' }, {
+            class_name: 'makeroi-send_button',
+            text: 'Отправить',
+            blue: true
+        }) }}
+    </div>
+</div>

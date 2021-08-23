@@ -1,0 +1,178 @@
+/* footer */
+.settings__wrap-desc-space
+  position: relative
+  padding-bottom: 95px
+  \:global(.tabs)
+    display: flex
+    flex-wrap: wrap
+    overflow: hidden
+    justify-content: flex-start
+    label
+      height: 29px
+      margin: 0
+      margin-right: 20px
+      box-sizing: border-box
+
+  .footer
+    position: absolute
+    bottom: 20px
+    left: 0
+    width: 100%
+  .wrap__footer
+    min-height: 1px
+    padding: 2px 0
+    border-top: 1px solid silver
+    margin: 0 30px
+    position: relative
+    color: #92989B
+    display: flex
+    font-size: 14px
+    height: 32px
+    align-items: center
+    align-content: center
+    justify-content: space-between
+  .wrap__footer:after
+    content: ""
+    width: 5px
+    height: 5px
+    background: silver
+    position: absolute
+    top: -3.5px
+    right: 0
+    transform: rotateZ(45deg)
+  .wrap__footer:before
+    content: ""
+    width: 5px
+    height: 5px
+    background: silver
+    position: absolute
+    top: -3.5px
+    left: 0
+    transform: rotateZ(45deg)
+  .wrap__footer
+    .footer__contacts
+      display: flex
+      flex-wrap: nowrap
+      align-items: center
+      .footer__column
+        display: flex
+        flex-wrap: nowrap
+        align-items: center
+      .footer__column > span > a
+        color: inherit
+        text-decoration: none
+      .footer__column > span
+        padding-left: 2px
+      .footer__column > img
+        width: 18px
+        margin-top: 2px
+      .footer__column:not(:first-child)
+        padding-left: 5px
+    .footer__widgets
+      display: flex
+      text-align: right
+      margin-right: 5px
+    .footer__widgets > a
+      color: #92989B
+      width: 100%
+      text-align: right
+    .footer__social
+      display: flex
+      padding: 0 10px
+    .footer__social > a > img
+      display: block
+      margin: 0 3px
+      width: 18px
+
+  .footer
+    .footer__version__info
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      height: 32px
+      margin: 0 30px
+    .version__show_info
+      margin-right: 8px
+      margin-bottom: 5px
+      cursor: pointer
+    .pay__show_info
+      @extend .version__show_info
+    .pay__show_info > span
+      text-decoration-line: underline
+
+.version__wrap
+  .version__info
+    display: flex
+    flex-direction: column
+    align-items: center
+  .version__info__title
+    font-weight: bold
+    font-size: 20px
+    margin-bottom: 6px
+  .version__info__inner
+    color: #92989B
+    font-size: 16px
+  .version__info__description
+    margin-top: 15px
+  .version__history
+    display: flex
+    flex-direction: column
+    .version__item
+     margin-top: 20px
+    .version__item
+      .version__item_info
+        display: flex
+        justify-content: space-between
+        height: 32px
+        align-items: center
+        border-top: 1px solid silver
+      .version__item_version
+        font-weight: bold
+      .version__item_date
+        color: #92989B
+      .version__item_description > ul
+        padding-left: 28px
+      .version__item_description > ul > li
+        list-style: disc
+    .version__history_more
+      text-align: center
+      text-decoration-line: underline
+      color: #92989B
+      padding: 5px 0
+      margin-top: 10px
+      cursor: pointer
+.pay_history__modal :global(.modal-body)
+  width: 760px
+  min-width: 40%
+  .pay_history__title
+    font-family: PT Sans
+    font-style: normal
+    font-weight: bold
+    font-size: 18px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+  .pay_history__table
+    width: 100%
+    text-align: center
+  .pay_history__table > table
+    width: 100%
+  .pay_history__table > table > thead
+    background-color: #C0DDFF
+    border: 1px solid #C0DDFF
+  .pay_history__table > table > thead > tr > td
+    height: 38px
+    vertical-align: middle
+    white-space: nowrap
+    padding: 0 8px
+  .pay_history__table > table > tbody
+    border: 1px solid #DDDDDD
+  .pay_history__table > table > tbody > tr > td.list_empty
+    color: silver
+  .pay_history__table > table > tbody > tr > td
+    padding: 10px 5px
+    border-bottom: 1px solid #DDDDDD
+    border-right: 1px solid #DDDDDD
+  .pay_history__table > table > tbody > tr > td > a
+    color: inherit

@@ -1,0 +1,8 @@
+<div class="{{ styles.tabWidgetRequestAccess }}">
+    Необходимо повторно предоставить доступ
+</div>
+{{ self.render({ ref: '/tmpl/controls/button.twig' }, {
+    class_name: styles.tabWidgetRequestButton,
+    text: 'Предоставить',
+    blue: true
+}) }}

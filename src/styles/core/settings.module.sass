@@ -1,0 +1,97 @@
+.field
+  display: flex
+  width: 100%
+  margin-bottom: 15px
+
+.label
+  width: 35%
+  margin-right: 15px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  span
+    word-break: break-all
+
+
+.value
+  min-width: 300px
+  input
+    width: 100%
+
+.dp-wrapper
+  padding: 16px
+  background: #F1F8FF
+  border: 1px #454444 dotted
+  position: relative
+  margin-bottom: 10px
+
+.dp-text
+  text-align: center
+
+.help-ref
+  position: absolute
+  display: flex
+  justify-content: flex-end
+  width: 100%
+  top: 0
+  left: 0
+  box-sizing: border-box
+  padding: 6px
+  a
+    position: absolute
+    img
+      width: 16px
+      height: 16px
+
+.settings-wrapper
+  position: relative
+  border: 1px #454444 dotted
+  padding: 36px 40px
+  margin: 10px 0
+
+.save-button
+  display: block
+
+.render-blocker
+  display: none
+
+.lds-ring
+  display: inline-flex
+  position: relative
+  width: 60px
+  height: 60px
+  justify-content: center
+  align-items: center
+  div
+    box-sizing: border-box
+    display: block
+    position: absolute
+    width: 32px
+    height: 32px
+    margin: 8px
+    border: 2px solid #999999
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    border-color: #999999 transparent transparent transparent
+
+  div:nth-child(1)
+    animation-delay: -0.45s
+
+  div:nth-child(2)
+    animation-delay: -0.3s
+
+  div:nth-child(3)
+    animation-delay: -0.15s
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.loading-wrapper
+  @extend .dp-wrapper
+
+.ring-wrapper
+  display: flex
+  justify-content: center

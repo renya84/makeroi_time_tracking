@@ -1,0 +1,36 @@
+export enum WidgetStatus {
+    INSTALLED_NOT_ACTIVE= -100,
+    TRIAL_SUBSCRIPTION_EXPIRED,
+    PAID_SUBSCRIPTION_EXPIRED,
+    DISABLED= 1,
+    FREE_INSTALLATION,
+    TRIAL_SUBSCRIPTION,
+    NOT_ACTIVATED,
+    PAID_SUBSCRIPTION,
+    PARTNER_SUBSCRIPTION,
+    BLOCKED,
+    REFRESH_ACCESS
+}
+
+export enum RequestTypes{
+    GET = 'GET',
+    POST = 'POST',
+    PUT = 'PUT',
+    DELETE = 'DELETE',
+}
+
+export enum NotificationTypes{
+    VALIDATION_ERROR,
+    WIDGET_ERROR,
+    WIDGET_ERROR_REPORT,
+    DEMO_FINISHED,
+    RATING,
+    RATING_GOOD,
+    RATING_BAD,
+}
+
+export enum FeedbackRequestTypes{
+    CALL_BACK,
+    BUG_REPORT,
+    WISH
+}

@@ -1,0 +1,50 @@
+<div class="{{ style.footer }}">
+    <div class="{{ style.footerVersionInfo }}">
+        {% if version != "" %}
+            <div class="{{ style.versionShowInfo }}">
+                <span class="makeroi-text__inner">{{ version }}</span>
+            </div>
+        {% endif %}
+    </div>
+    <div class="{{ style.wrapFooter }}">
+        <div class="{{ style.footerContacts }}">
+            <div class="{{ style.footerColumn }}">
+                <img src="{{ icon_link }}/globe.svg">
+                <span class="makeroi-cite">
+                    {% if site %}
+                        <a href="{{ site }}" target="_blank">{{ siteName }}</a>
+                    {% endif %}
+                </span>
+            </div>
+            <div class="{{ style.footerColumn }}">
+                <img src="{{ icon_link }}/mail.svg">
+                <span class="makeroi-mail">
+                    <a href="mailto:{{ mail }}">{{ mail }}</a>
+                </span>
+            </div>
+            <div class="{{ style.footerColumn }}">
+                <img src="{{ icon_link }}/phone.svg">
+                <span class="makeroi-phone">
+                    {{ phone }}
+                </span>
+            </div>
+        </div>
+        <div class="{{ style.footerSocial }}">
+            {% if whatsapp %}
+                <a href="{{ whatsapp }}" target="_blank"><img src="{{ icon_link }}/ws.svg"></a>
+            {% endif %}
+            {% if telegram %}
+                <a href="{{ telegram }}" target="_blank"><img src="{{ icon_link }}/tg.svg"></a>
+            {% endif %}
+            {% if facebook %}
+                <a href="{{ facebook }}" target="_blank"><img src="{{ icon_link }}/fb.svg"></a>
+            {% endif %}
+            {% if youtube %}
+                <a href="{{ youtube }}" target="_blank"><img src="{{ icon_link }}/youtube.svg"></a>
+            {% endif %}
+        </div>
+        <div class="{{ style.footerWidgets }}">
+            <a href="{{ widgets }}" target="_blank">наши виджеты</a>
+        </div>
+    </div>
+</div>

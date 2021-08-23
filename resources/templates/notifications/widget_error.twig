@@ -1,0 +1,26 @@
+<div class="{{ styles.errorWrapper }}">
+    <div class="{{ styles.cross }}">
+        <img src="{{ imagePath }}/cross.svg">
+    </div>
+    <div class="{{ styles.errorImage }}">
+        <div class="{{ styles.imageCard }}">
+            <img src="{{ imagePath }}/logo_min.png">
+        </div>
+    </div>
+    <div class="{{ styles.errorText }}">
+        <div class="">Ошибка работы виджета</div>
+        {{ text }}
+    </div>
+    <div class="{{ styles.notificationsCallback }}">
+        Свяжитесь с нами
+    </div>
+    <div class="{{ styles.widgetErrorFooter }}">
+        <div class="{{ styles.widgetErrorFooterInner }}">
+            <span>Отправить отчет об ошибке</span>
+            <img src="{{ imagePath }}/arrow.svg">
+        </div>
+        <div class="{{ styles.widgetErrorSpinner }} {{ styles.hidden }}">
+            <div class="{{ styles.ldsRing }}"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+</div>

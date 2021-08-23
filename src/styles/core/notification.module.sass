@@ -1,0 +1,335 @@
+$error: #FFEBE4
+$light-blue: #DCECFF
+$blue: #B8D9FF
+$dblue: #295EBF
+$dark-blue: #003089
+
+.container
+  position: fixed
+  background: #fff
+  border-radius: 10px
+  z-index: 1001
+  box-shadow: 3px 4px 13px rgba(155,155,155, 0.25)
+  transition: 200ms ease-in-out
+  opacity: 0
+
+.server-error-container
+  background: $error
+  width: 340px
+  height: 340px
+
+.widget-error-container
+  @extend .server-error-container
+  background: #fff
+
+.opacity-full
+  transition: 200ms ease-in-out
+  opacity: 1
+
+.error-wrapper
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  position: relative
+  align-items: center
+  padding: 15px 20px
+  height: 100%
+  box-sizing: border-box
+  div
+    width: 100%
+
+.error-validation-wrapper
+  @extend .error-wrapper
+  justify-content: flex-start
+
+.report-wrapper
+  @extend .error-wrapper
+  justify-content: center
+
+.cross
+  position: absolute
+  display: flex
+  justify-content: flex-end
+  width: calc(100% - 30px) !important
+  top: 15px
+  img
+    width: 13px
+    height: 13px
+    &:hover
+      cursor: pointer
+
+.error-image
+  margin-top: 10px
+  margin-bottom: 20px
+  display: flex
+  justify-content: center
+
+.success-image
+  @extend .error-image
+  margin-top: 30px
+  margin-bottom: 40px
+  img
+    width: 140px
+    height: 140px
+
+.server-error-footer
+  background: #fff
+  display: flex
+  justify-content: space-between
+  margin: -15px -20px
+  padding: 15px 20px
+  border-radius: 0 0 5px 5px
+  div
+    width: auto
+
+.widget-error-footer
+  @extend .server-error-footer
+  background: $error
+  justify-content: center
+
+.widget-error-footer-inner
+  display: flex
+  justify-content: center
+  align-items: center
+  &:hover
+    cursor: pointer
+  img
+    width: 13px
+    height: 13px
+    margin-left: 8px
+
+.error-call
+  display: flex
+  align-items: center
+  &:hover
+    cursor: pointer
+  img
+    margin-right: 8px
+
+.error-text
+  text-overflow: ellipsis
+  text-align: center
+  overflow: hidden
+  word-break: break-word
+  overflow-y: auto
+  max-height: 180px
+  min-height: 130px
+  scrollbar-width: thin
+  scrollbar-color: #CDCDCD #E8E8E8
+  &::-webkit-scrollbar
+    width: 5px
+  &::-webkit-scrollbar-track
+    background: #E8E8E8
+  &::-webkit-scrollbar-thumb
+    background: #CDCDCD
+    border-radius: 20px
+
+.error-social
+  display: flex
+  a
+    margin-right: 8px
+    display: inline-block
+    width: auto
+
+.widget-error-spinner
+  margin-top: -8px
+  margin-bottom: -8px
+
+.lds-ring
+  display: inline-block
+  position: relative
+  width: 30px !important
+  height: 30px !important
+  div
+    box-sizing: border-box
+    display: block
+    position: absolute
+    width: 20px
+    height: 20px
+    margin: 8px
+    border: 1px solid #5e5e5e
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    border-color: #5e5e5e transparent transparent transparent
+  &:nth-child(1)
+    animation-delay: -0.45s
+  &:nth-child(2)
+    animation-delay: -0.3s
+  &:nth-child(3)
+    animation-delay: -0.15s
+
+@keyframes lds-ring
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+.error-report-text
+  font-size: 20px
+  text-align: center
+  margin-bottom: 40px
+
+
+.hidden
+  display: none !important
+
+
+.demo-container
+  width: 420px
+  height: 100px
+  display: flex
+
+
+.demo-text
+  width: 100%
+  padding: 20px 10px
+
+.demo-aside
+  width: 80px
+  height: 100%
+  background: $light-blue
+  border-radius: 0 10px 10px 0
+  display: flex
+  justify-content: center
+  align-items: center
+  &:hover
+    cursor: pointer
+
+.demo-image
+  margin-left: 20px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.demo-pay
+  width: 100px
+  border-radius: 0 10px 10px 0
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+.demo-aside-button
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 50%
+  font-size: 14px
+  text-align: center
+  padding: 0 5px
+  &:hover
+    cursor: pointer
+
+.demo-payment
+  @extend .demo-aside-button
+  background: $light-blue
+  border-radius: 0 10px 0 0
+  font-weight: bold
+
+.demo-later
+  @extend .demo-aside-button
+  background: $blue
+  border-radius: 0 0 10px 0
+
+.demo-widget-name
+  font-weight: bold
+
+.rating-container
+  background: #fff
+  width: 440px
+  height: 150px
+
+.rating-inner
+  margin-left: 25px
+
+.rating-wrapper
+  @extend .error-wrapper
+  flex-direction: row
+
+.rating-image
+  margin-left: 8px
+  margin-right: 8px
+  width: auto !important
+
+.rating-stars
+  margin-bottom: 4px
+  svg
+    width: 25px
+    height: 25px
+  &:hover
+    cursor: pointer
+
+.rating-star-active
+  path
+    fill: $dark-blue
+    transition: 200ms ease-in-out
+
+
+.rating-bold
+  font-weight: bold
+  margin-bottom: 4px
+
+.rating-description
+  margin-bottom: 4px
+
+.rating-thanks
+  color: $dblue
+
+.rating-spinner
+  margin-bottom: 10px
+  display: flex
+  justify-content: center
+
+.thanks-wrapper
+  @extend .error-wrapper
+  flex-direction: row
+
+.thanks-image
+  width: auto !important
+  img
+    width: 80px
+    height: 80px
+
+.thanks-right
+  display: flex
+  flex-direction: column
+  margin-left: 20px
+
+.thanks-text
+  font-weight: bold
+  font-size: 20px
+  margin-bottom: 15px
+
+.thanks-bad-text
+  @extend .thanks-text
+  margin-bottom: 5px
+
+.thanks-link
+  color: $dblue
+  text-decoration: underline
+  &:hover
+    cursor: pointer
+
+.thanks-reason
+  margin-bottom: 5px
+
+.image-card
+  position: relative
+  border-radius: 50%
+  overflow: hidden
+  width: 60px !important
+  height: 60px
+  img
+    position: absolute
+    left: -20%
+    top: -20%
+
+.notifications-callback
+  text-decoration: underline
+  text-align: center
+  margin-bottom: 20px
+  margin-top: 5px
+  &:hover
+    cursor: pointer
