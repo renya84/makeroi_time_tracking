@@ -394,7 +394,6 @@ export default class WidgetCore extends Core implements MakeroiCore {
         const store = await this.store();
         const tabSubscription = await this.lib.getTemplate('tab_subscription');
 
-        const tariffs = store.tariffs.map((v:any) => {
         const tariffs = store.tariffs.map((v: any) => {
             v.price = v.price.toLocaleString('ru-RU');
             return v;
@@ -406,7 +405,7 @@ export default class WidgetCore extends Core implements MakeroiCore {
             isPaid: store.widget.is_paid,
             paySetting: tariffs,
             confidence: store.constants.links.confidence,
-            selected : 1
+            selected : 1,
             status: store.widgetStatus,
             expires: store.expires.format('D.M.YYYY')
         });
